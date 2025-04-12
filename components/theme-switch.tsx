@@ -18,7 +18,7 @@ const ThemeSwitch = () => {
     <>
       <label
         htmlFor="theme"
-        className="mr-2 font-light text-sm text-slate-400 dark:text-slate-400"
+        className="mr-2 font-light text-sm text-slate-600 dark:text-slate-400"
       >
         Theme
       </label>

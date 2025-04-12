@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   description: generalData.about,
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "",
+    locale: "ko_KR",
+    url: "www.imdrone.site",
     siteName: `${generalData.name} - ${generalData.jobTitle}`,
     title: `${generalData.name} - ${generalData.jobTitle}`,
     description: generalData.about,
@@ -35,8 +35,8 @@ export default function RootLayout({
 }) {
   return (
     <ServerThemeProvider attribute="class">
-      <html lang="en">
-        <body className={`${inter.className} dark:bg-neutral-900`}>
+      <html lang="ko">
+        <body className={`${inter.className} bg-neutral-100 dark:bg-neutral-900`}>
           <Providers>{children}</Providers>
         </body>
       </html>
