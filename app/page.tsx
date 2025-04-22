@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ThemeSwitch from "@/components/theme-switch";
-import avatar from "@/public/avatar.svg";
-
+// import avatar from "@/public/avatar.svg";
 
 import { generalData } from "@/data/general";
 import { personalData } from "@/data/personal";
@@ -23,88 +22,14 @@ type CertificateProps = Certificate;
 type ActivityProps = Activity;
 
 
-const Content: React.FC<ContentProps> = ({ title, transcription, items }) => {
-  return (
-    <section className="my-14 text-sm">
-      <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
-
-      <div className="flex flex-col flex-1">
-        <h3 className="mr-8">{title}</h3>
-        <p className="text-slate-600 dark:text-gray-400">
-            {transcription}
-        </p>
-      </div>
-
-      <div className="flex flex-col gap-6 mt-6">
-        {items.map((item, index) => {
-          return (
-            <div className="flex" key={index}>
-              <div className="mr-8 max-w-[100px] w-full text-slate-600 dark:text-gray-400">
-                {item.date}
-              </div>
-              <div className="flex flex-col flex-1">
-                <h4>{item.title}</h4>
-                <p className="text-slate-600 dark:text-gray-400">
-                  {item.subTitle}
-                </p>
-                {item.description ? (
-                  <p className="text-slate-600 dark:text-gray-400 mt-2">
-                    {item.description}
-                  </p>
-                ) : null}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-};
-const Education: React.FC<EducationProps> = ({ title, transcription, items }) => {
-  return (
-    <section className="my-14 text-sm">
-      <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
-
-      <div className="flex flex-col flex-1">
-        <h3 className="mr-8">{title}</h3>
-        <p className="text-slate-600 dark:text-gray-400">
-            {transcription}
-        </p>
-      </div>
-
-      <div className="flex flex-col gap-6 mt-6">
-        {items.map((item, index) => {
-          return (
-            <div className="flex" key={index}>
-              <div className="mr-8 max-w-[100px] w-full text-slate-600 dark:text-gray-400">
-                {item.date}
-              </div>
-              <div className="flex flex-col flex-1">
-                <h4>{item.title}</h4>
-                <p className="text-slate-600 dark:text-gray-400">
-                  {item.subTitle}
-                </p>
-                {item.description ? (
-                  <p className="text-slate-600 dark:text-gray-400 mt-2">
-                    {item.description}
-                  </p>
-                ) : null}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-};
 const Personal: React.FC<PersonalProps> = ({ title, transcription, items }) => {
   return (
-    <section className="my-14 text-sm">
-      
+    <section className="my-14 text-base">
+
       <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
 
       <div className="flex flex-col flex-1">
-        <h3 className="mr-8">{title}</h3>
+        <h3 className="text-2xl mr-8">{title}</h3>
         <p className="text-slate-600 dark:text-gray-400">
           {transcription}
         </p>
@@ -134,10 +59,50 @@ const Personal: React.FC<PersonalProps> = ({ title, transcription, items }) => {
     </section>
   );
 };
+
+const Education: React.FC<EducationProps> = ({ title, transcription, items }) => {
+  return (
+    <section className="my-14 text-base">
+      <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
+
+      <div className="flex flex-col flex-1">
+        <h3 className="mr-8">{title}</h3>
+        <p className="text-slate-600 dark:text-gray-400">
+          {transcription}
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-6 mt-6">
+        {items.map((item, index) => {
+          return (
+            <div className="flex" key={index}>
+              <div className="mr-8 max-w-[100px] w-full text-slate-600 dark:text-gray-400">
+                {item.date}
+              </div>
+              <div className="flex flex-col flex-1">
+                <h4>{item.title}</h4>
+                <p className="text-slate-600 dark:text-gray-400">
+                  {item.subTitle}
+                </p>
+                {item.description ? (
+                  <p className="text-slate-600 dark:text-gray-400 mt-2">
+                    {item.description}
+                  </p>
+                ) : null}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+
 const Certificate: React.FC<CertificateProps> = ({ title, transcription, items }) => {
   return (
-    <section className="my-14 text-sm">
-      
+    <section className="my-14 text-base">
+
       <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
 
       <div className="flex flex-col flex-1">
@@ -160,9 +125,9 @@ const Certificate: React.FC<CertificateProps> = ({ title, transcription, items }
                 </p>
                 {item.level ? (
                   <p className="text-slate-600 dark:text-gray-400 mt-2">
-                  {item.level}
-                </p>
-                ):null}
+                    {item.level}
+                  </p>
+                ) : null}
                 {item.description ? (
                   <p className="text-slate-600 dark:text-gray-400 mt-2">
                     {item.description}
@@ -177,15 +142,55 @@ const Certificate: React.FC<CertificateProps> = ({ title, transcription, items }
   );
 };
 
-const Activity: React.FC<ActivityProps> = ({ title, transcription, items }) => {
+const Content: React.FC<ContentProps> = ({ title, transcription, items }) => {
   return (
-    <section className="my-14 text-sm">
+    <section className="my-14 text-base">
       <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
 
       <div className="flex flex-col flex-1">
         <h3 className="mr-8">{title}</h3>
         <p className="text-slate-600 dark:text-gray-400">
-            {transcription}
+          {transcription}
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-6 mt-6">
+        {items.map((item, index) => {
+          return (
+            <div className="flex" key={index}>
+              <div className="mr-8 max-w-[100px] w-full text-slate-600 dark:text-gray-400">
+                {item.date}
+              </div>
+              <div className="flex flex-col flex-1">
+                <h4>{item.title}</h4>
+                <p className="text-slate-600 dark:text-gray-400">
+                  {item.subTitle}
+                </p>
+                {item.description ? (
+                  <p className="text-slate-600 dark:text-gray-400 mt-2">
+                    {item.description}
+                  </p>
+                ) : null}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+
+
+const Activity: React.FC<ActivityProps> = ({ title, transcription, items }) => {
+  return (
+    <section className="my-14 text-base">
+      <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
+
+      <div className="flex flex-col flex-1">
+        <h3 className="mr-8">{title}</h3>
+        <p className="text-slate-600 dark:text-gray-400">
+          {transcription}
         </p>
       </div>
 
@@ -218,7 +223,7 @@ const Activity: React.FC<ActivityProps> = ({ title, transcription, items }) => {
 export default function Home() {
   return (
     <>
-      <main className="max-w-3xl mx-auto px-6 py-20 relative min-h-screen -light">
+      <main className="max-w-xl mx-auto px-6 py-20 relative min-h-screen -light font-[Open_Sans]">
         <section className="flex items-center">
           <Image
             alt="박영진"
@@ -226,22 +231,22 @@ export default function Home() {
             // src = "/avatar.jpg"
             width={120}
             height={120}
-            className="rounded-full object-contain"
+            className="round md:rounded-lg object-contain shadow-2xl"
           />
           <div className="ml-9">
-            <h1 className="mb-3 text-2xl text-slate-900 dark:text-slate-100">
+            <h1 className="mb-3 text-4xl text-slate-900 dark:text-slate-100">
               {generalData.name}
             </h1>
-          
-            <p className="text-sm text-slate-600 dark:text-gray-400">
+
+            <p className="text-base text-slate-600 dark:text-gray-400">
               {generalData.position}
-            </p>  
-            <p className="text-sm text-slate-600 dark:text-gray-400">
+            </p>
+            <p className="text-base text-slate-600 dark:text-gray-400">
               {generalData.jobTitle}
             </p>
 
             {generalData.website ? (
-              <p className="text-sm text-slate-600 dark:text-gray-400">
+              <p className="text-base text-slate-600 dark:text-gray-400">
                 <a
                   href={generalData.website}
                   target="_blank"
@@ -254,13 +259,13 @@ export default function Home() {
                 </a>
               </p>
             ) : null}
-          
-            
+
+
           </div>
         </section>
-{/* About */}
-        <section className="my-14 text-sm">
-          
+        {/* About */}
+        <section className="my-14 text-base">
+
           {/* <h3 className="mb-1 text-slate-900 dark:text-slate-100">About</h3> */}
           {/* <div className="flex flex-col flex-1">
         <h3 className="mr-8">소개</h3>
@@ -268,59 +273,59 @@ export default function Home() {
             Introduce
         </p>
       </div> */}
-          <div className="text-slate-600 dark:text-gray-400 mt-6">
+          <div className="text-gray-900 dark:text-gray-400 mt-6">
             <p>{generalData.about}</p>
           </div>
         </section>
 
-  {/* Personal Data */}
+        {/* Personal Data */}
         {
           personalData.map((personal, index) => {
-            return <Personal {...personal} key = {index} />;
-            }
+            return <Personal {...personal} key={index} />;
+          }
           )
         }
-  {/* Education Data */}
+        {/* Education Data */}
         {
           educationData.map((education, index) => {
             return <Content {...education} key={index} />;
-              }
+          }
           )
         }
 
 
-  {/* Skill and Certificate Data */}
-  {
-    certificateData.map((certificate, index)=>{
-      return <Certificate {...certificate} key = {index}/>
-      
-    })
-  }
-{/* Content Data */}
+        {/* Skill and Certificate Data */}
+        {
+          certificateData.map((certificate, index) => {
+            return <Certificate {...certificate} key={index} />
+
+          })
+        }
+        {/* Content Data */}
         {
           contentData.map((content, index) => {
             return <Content {...content} key={index} />;
-              }
+          }
           )
         }
-{/* Activity */}
-{
-  activityData.map((activity, index) => {
-    return <Activity {...activity} key={index} />;
-      }
-  )
-}
-{/* Social */}
-        <section className="my-14 text-sm">
+        {/* Activity */}
+        {
+          activityData.map((activity, index) => {
+            return <Activity {...activity} key={index} />;
+          }
+          )
+        }
+        {/* Social */}
+        <section className="my-14 text-base">
 
-        <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
+          <hr className="h-px my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
 
-        <div className="flex flex-col flex-1">
-        <h3 className="mr-8">소셜</h3>
-        <p className="text-slate-600 dark:text-gray-400">
-          Social Networks
-        </p>
-      </div>
+          <div className="flex flex-col flex-1">
+            <h3 className="mr-8">소셜</h3>
+            <p className="text-slate-600 dark:text-gray-400">
+              Social Networks
+            </p>
+          </div>
 
           {/* <h3 className="mb-6 text-slate-900">Contact</h3> */}
           <div className="flex flex-col gap-6 mt-6">
